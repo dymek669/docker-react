@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR usr/app
+
+COPY package.json .
+
+RUN yarn
+
+# to przy użyciu docker-compose moża wyrzucić ale i tak zostawimy (:
+COPY . .
+
+CMD ["yarn", "start"]
